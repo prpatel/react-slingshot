@@ -32,6 +32,11 @@ var getPlugins = function(env) {
 var getLoaders = function(env) {
   var loaders = [
     { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel', 'eslint'] },
+    {test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+            loader: 'file-loader'
+    }, {test: /\.(eot|ttf|wav|mp3)$/,
+            loader: 'file-loader'
+    },
     {
       test: /(\.css|\.scss)$/,
       include: path.join(__dirname, 'src'),
